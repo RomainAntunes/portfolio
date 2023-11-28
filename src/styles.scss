@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cambridge-blue);
+}
+
+:root {
+  --light-goldenrod: #F3F9D2;
+  --cinereous: #93827F;
+  --laurel-green: #BDC4A7;
+  --jet: #2F2F2F;
+  --cambridge-blue: #92B4A7;
+}

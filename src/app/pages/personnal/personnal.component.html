@@ -1,0 +1,25 @@
+<div>
+  <span class="status-message">Actuellement {{available ? '' : 'non '}} disponible 😄</span>
+
+  <div>
+    <span></span>
+  </div>
+
+</div>
+<div>
+  <h3 class="text-welcome">Hey ! i'm -</h3>
+  <h1 class="text-personal">Romain Antunes</h1>
+
+
+  <h4 class="text-currentJob"> {{currentJob}} </h4>
+  <div>
+    <ul>
+      <li *ngFor="let social of socials">
+        <a [href]="social.link">{{social.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<app-projects></app-projects>
