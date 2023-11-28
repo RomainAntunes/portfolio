@@ -1,5 +1,7 @@
 /* VAR */
-$dots-size: 10px;
+.presentation {
+  height: 100vh;
+}
 
 /* STATUS */
 .status-group {
@@ -32,29 +34,6 @@ $dots-size: 10px;
 .status-svg {
   z-index: 20;
   border-radius: 50%;
-}
-
-
-/* DOTS */
-.grid-dots {
-  z-index: -1;
-
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  display: grid;
-  grid-template-columns: repeat(5, $dots-size);
-  grid-gap: $dots-size;
-}
-
-.dots {
-  width: $dots-size;
-  height: $dots-size;
-
-  border-radius: 50%;
-
-  background: var(--light-goldenrod);
 }
 
 /* SOCIALS */

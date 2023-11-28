@@ -1,3 +1,47 @@
-<p>project-detail works!</p>
+<ng-container *ngIf="(project$ | async) as project">
+  <div class="project-detail-popup">
+    <div class="project-header">
+      <div class="project-return" (click)="returnBack()">
+        <ng-icon name="heroArrowLeft"></ng-icon>
+      </div>
 
-<h3>SLUG : {{slug}}</h3>
+      <div *ngIf="project.in_progress" class="project-in-progress">
+        <div class="project-alert-icon">
+          <ng-icon name="heroWrenchScrewdriver"></ng-icon>
+        </div>
+        <span>
+        Still in progress
+      </span>
+      </div>
+    </div>
+
+    <h1> {{project.name }} </h1>
+
+    <div class="project-image">
+      <img [src]="project.image">
+    </div>
+
+    <p class="project-description">
+      {{project.description}}
+    </p>
+
+    <ng-container *ngIf="project.links">
+      <h3>Links</h3>
+      <div class="project-link" *ngFor="let link of project.links">
+        <a [href]="link.url">
+          {{ link.name }} <ng-icon name="heroLink"></ng-icon>
+        </a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="project.technologies">
+      <h3>Technologies</h3>
+      <div class="project-link" *ngFor="let technologie of project.technologies">
+        <span>
+          {{ technologie.name }}
+        </span>
+      </div>
+    </ng-container>
+
+  </div>
+</ng-container>

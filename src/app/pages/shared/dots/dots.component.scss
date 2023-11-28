@@ -1,0 +1,19 @@
+$dots-size: 10px;
+
+/* DOTS */
+.grid-dots {
+  z-index: -1;
+
+  display: grid;
+  grid-template-columns: repeat(5, $dots-size);
+  grid-gap: $dots-size;
+}
+
+.dots {
+  width: $dots-size;
+  height: $dots-size;
+
+  border-radius: 50%;
+
+  background: var(--light-goldenrod);
+}

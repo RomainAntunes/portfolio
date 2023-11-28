@@ -1,0 +1,95 @@
+:host {
+  padding: 0;
+  margin: 0;
+
+  height: 100vh;
+  display: block;
+  background: var(--jet);
+}
+
+a {
+  text-decoration: none;
+  color: var(--jet);
+}
+
+/* PROJECT */
+
+.projects-title {
+  font-size: 3rem;
+  padding: 25px 35px;
+
+  color: var(--light-goldenrod);
+}
+
+.project-group {
+  padding: 15px 30px;
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.project {
+  min-width: 270px;
+  max-width: 360px;
+
+  min-height: 320px;
+  max-height: 390px;
+
+  padding: 8px 12px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--cambridge-blue);
+
+  & .project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    & img {
+      width: 260px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+
+  & .project-description {
+    max-height: 40px;
+    min-height: 30px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+/* SLIDE */
+.slide-control {
+  display: flex;
+
+  margin-top: 25px;
+  gap: 30px;
+
+  flex-direction: row-reverse;
+  margin-right: 25px;
+
+  & div {
+    padding: 12px 18px;
+
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+    background: var(--light-goldenrod);
+
+    & ng-icon {
+      color: var(--jet);
+
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

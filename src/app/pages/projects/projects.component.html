@@ -1,3 +1,40 @@
-<p>projects works!</p>
+<div>
+  <h1 class="projects-title">Projects</h1>
+
+  <div #projectsContent class="project-group">
+    <ng-container *ngIf="(projects$ | async) as projects">
+
+      <div class="project" *ngFor="let project of projects">
+        <a [routerLink]="project.slug">
+          <h2 class="project-title">
+            {{ project.name }}
+          </h2>
+
+          <ng-container *ngIf="project.image">
+            <div class="project-image">
+              <img [src]="project.image" [alt]="'image of illustration for the ' + project.name + 'project'">
+            </div>
+          </ng-container>
+
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="slide-control">
+    <div
+      (click)="slideNext()">
+      <ng-icon name="heroArrowRight"></ng-icon>
+    </div>
+    <div
+      (click)="slidePrev()">
+      <ng-icon name="heroArrowLeft"></ng-icon>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
+
