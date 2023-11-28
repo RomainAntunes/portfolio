@@ -1,20 +1,56 @@
 <div>
-  <span class="status-message">Actuellement {{available ? '' : 'non '}} disponible 😄</span>
+  <div class="status-group">
+    <img class="status-svg"
+         ngSrc="assets/memoji.svg"
+         height="305"
+         width="305"
+         alt="memoji of myself behind a computer"
+         priority="1">
 
-  <div>
-    <span></span>
+    <span class="status-message">Actuellement {{available ? '' : 'non '}} disponible 😄</span>
+
+    <div class="grid-dots">
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+      <span class="dots"></span>
+    </div>
   </div>
 
 </div>
+
 <div>
-  <h3 class="text-welcome">Hey ! i'm -</h3>
-  <h1 class="text-personal">Romain Antunes</h1>
+  <div class="welcome">
+    <h2 class="text-welcome">Hey ! i'm -</h2>
+    <h1 class="text-personal">Romain Antunes</h1>
+  </div>
 
 
-  <h4 class="text-currentJob"> {{currentJob}} </h4>
+  <h3 class="text-currentJob"> {{currentJob}} </h3>
   <div>
-    <ul>
-      <li *ngFor="let social of socials">
+    <ul class="social-list">
+      <li class="social-link" *ngFor="let social of socials">
         <a [href]="social.link">{{social.name}}</a>
       </li>
     </ul>
@@ -22,4 +58,12 @@
 </div>
 
 
-<app-projects></app-projects>
+<div style="margin-top: 50px;">
+  <app-projects></app-projects>
+</div>
+
+<div style="margin-top: 50px;">
+  <app-contact></app-contact>
+</div>
+
+<!-- Made with love by Romain Antunes ❤️ -->
