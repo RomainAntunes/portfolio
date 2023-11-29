@@ -17,7 +17,7 @@
 
     <h1> {{project.name }} </h1>
 
-    <div class="project-image">
+    <div class="project-image" *ngIf="project.image">
       <img [src]="project.image">
     </div>
 

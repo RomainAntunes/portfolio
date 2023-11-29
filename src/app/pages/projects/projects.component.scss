@@ -42,6 +42,20 @@ a {
   overflow: hidden;
   background-color: var(--cambridge-blue);
 
+  & .image-placeholder {
+    background: linear-gradient(
+        90deg,
+        grey 0,
+        #868686 50%,
+        grey 100%
+    );
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+
+    animation: skeleton 3s infinite linear forwards;
+  }
+
   & .project-image {
     display: flex;
     justify-content: center;
@@ -105,5 +119,15 @@ a {
     height: 100%;
     display: block;
     background: var(--jet);
+  }
+}
+
+
+@keyframes skeleton {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
   }
 }

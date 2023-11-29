@@ -60,6 +60,63 @@ export class ProjectsService {
         Technologies.Angular,
         Technologies.Infomaniak
       ]
+    },
+    {
+      slug: 'mercure',
+      name: 'Mercure',
+      description: 'Mercure is a web application that allows you to manage your customers, your products and your orders.\n\n' +
+        'You can also manage your stock and your suppliers.\n\n' +
+        'Mercure is a project that I developed during a school project.\n\n' +
+        'All the code is available and documents can be downloaded in the Releases page.',
+      image: undefined,
+      in_progress: false,
+      links: [
+        {
+          name: 'Mercure Github',
+          url: 'https://github.com/Homie-s-Project/mercure'
+        },
+        {
+          name: 'Mercure Releases',
+          url: 'https://github.com/Homie-s-Project/mercure/releases'
+        }
+      ],
+      technologies: [
+        Technologies.Angular,
+        Technologies.CSharp,
+        Technologies.DotNet,
+        Technologies.Docker,
+        Technologies.PostgreSQL,
+        Technologies.Grafana,
+        Technologies.Redis,
+      ]
+    },
+    {
+      slug: 'kairos',
+      name: 'Kairos',
+      description: 'kairos is a WEB application mainly that could also be developed later to become available on mobile.\n\n' +
+        'Its purpose is to help people who have difficulty getting started with revisions and staying focused.\n\n' +
+        'You will be able to launch a timer with the time you set yourself to revise. The application will inform you when to take a break and give you some tips/ tricks when the breaks are done. ',
+      image: undefined,
+      in_progress: false,
+      links: [
+        {
+          name: 'Kairos Github',
+          url: 'https://github.com/Homie-s-Project/kairos'
+        },
+        {
+          name: 'Kairos Releases',
+          url: 'https://github.com/Homie-s-Project/kairos/releases'
+        }
+      ],
+      technologies: [
+        Technologies.Angular,
+        Technologies.CSharp,
+        Technologies.DotNet,
+        Technologies.Docker,
+        Technologies.PostgreSQL,
+        Technologies.Grafana,
+        Technologies.Redis,
+      ]
     }
   ];
 

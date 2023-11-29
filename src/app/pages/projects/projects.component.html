@@ -10,11 +10,14 @@
             {{ project.name }}
           </h2>
 
-          <ng-container *ngIf="project.image">
+          <ng-container *ngIf="project.image; else noImage">
             <div class="project-image">
               <img [src]="project.image" [alt]="'image of illustration for the ' + project.name + 'project'">
             </div>
           </ng-container>
+          <ng-template #noImage>
+            <div class="image-placeholder"></div>
+          </ng-template>
 
           <p class="project-description">
             {{ project.description }}
