@@ -32,7 +32,7 @@ a {
 
 .project {
   min-width: 270px;
-  max-width: 360px;
+  max-width: 270px;
 
   min-height: 320px;
   max-height: 390px;
@@ -53,6 +53,7 @@ a {
       height: 200px;
       object-fit: cover;
       border-radius: 15px;
+      border: 1px solid var(--jet);
     }
   }
 

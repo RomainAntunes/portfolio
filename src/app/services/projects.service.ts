@@ -40,6 +40,27 @@ export class ProjectsService {
         Technologies.GIT,
       ]
     },
+    {
+      slug: 'portfolio',
+      name: 'Portfolio',
+      description: 'The porfolio you are currently viewing.',
+      image: 'assets/screenshots/romainantunes.jpeg',
+      in_progress: false,
+      links: [
+        {
+          name: 'Portfolio Github',
+          url: 'https://github.com/romainantunes/portfolio'
+        },
+        {
+          name: 'Portfolio Website',
+          url: 'https://romainantunes.com'
+        }
+      ],
+      technologies: [
+        Technologies.Angular,
+        Technologies.Infomaniak
+      ]
+    }
   ];
 
   constructor() {

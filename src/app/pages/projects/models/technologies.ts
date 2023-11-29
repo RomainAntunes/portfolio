@@ -42,4 +42,5 @@ export enum Technologies {
   GitLab = "GitLab",
   BitBucket = "BitBucket",
   GIT = "GIT",
+  Infomaniak = "Infomaniak",
 }
