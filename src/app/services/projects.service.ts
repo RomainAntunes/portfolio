@@ -16,7 +16,7 @@ export class ProjectsService {
         'We realized, that during real estate projects or even other categories. When there are several players and you have to transmit information, it can last and waste time quickly.\n\n' +
         'That’s why we decided to develop "Wiiseto".\n\n' +
         'An application that will allow to invite all the actors of a project in the same place and to be able to exchange documents, information on current projects.',
-      image: 'https://picsum.photos/260/200',
+      image: 'assets/screenshots/Wiiseto.jpeg',
       in_progress: true,
       links: [
         {
