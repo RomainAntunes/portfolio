@@ -25,6 +25,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   slideNext(): void {
+    if (this.isSwiping) return;
+
     this.currentlySwiping();
 
     let firstChildWidth = this.projectsContent.nativeElement.children[0].clientWidth + 25;;
@@ -32,6 +34,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   slidePrev(): void {
+    if (this.isSwiping) return;
+
     this.currentlySwiping();
 
     let firstChildWidth = this.projectsContent.nativeElement.children[0].clientWidth + 25;
@@ -44,6 +48,6 @@ export class ProjectsComponent implements OnInit {
     this.isSwiping = true;
     setInterval(() => {
       this.isSwiping = false;
-    }, 900)
+    }, 750)
   }
 }
