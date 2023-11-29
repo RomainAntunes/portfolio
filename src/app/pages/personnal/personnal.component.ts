@@ -25,7 +25,7 @@ export class PersonnalComponent {
     },
     {
       name: 'CodinGame',
-      link: 'https://www.codingame.com/profile/defc3ee5279aecc1bb6114e1f994ea9b3325423',
+      link: 'https://codingame.com/profile/defc3ee5279aecc1bb6114e1f994ea9b3325423',
       icon: 'ionCodeSlash',
       tooltip: 'Top 0.2% Worldwide'
     },

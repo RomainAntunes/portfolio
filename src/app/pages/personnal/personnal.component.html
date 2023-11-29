@@ -22,7 +22,8 @@
     <div>
       <ul class="social-list">
         <li class="social-link" *ngFor="let social of socials">
-          <a target="_blank" [href]="social.link">
+          <a target="_blank"
+             [href]="social.link">
             <ng-icon [name]="social.icon" *ngIf="social.icon"></ng-icon>
             {{social.name}}
           </a>

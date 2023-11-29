@@ -27,8 +27,9 @@
 
     <ng-container *ngIf="project.links">
       <h3>Links</h3>
-      <div class="project-link" *ngFor="let link of project.links">
-        <a [href]="link.url">
+      <div class="project-link">
+        <a  *ngFor="let link of project.links"
+            [href]="link.url">
           {{ link.name }} <ng-icon name="heroLink"></ng-icon>
         </a>
       </div>
@@ -36,9 +37,9 @@
 
     <ng-container *ngIf="project.technologies">
       <h3>Technologies</h3>
-      <div class="project-link" *ngFor="let technologie of project.technologies">
-        <span>
-          {{ technologie.name }}
+      <div class="project-tech">
+        <span *ngFor="let technologie of project.technologies | keyvalue">
+          {{ technologie.value }}
         </span>
       </div>
     </ng-container>

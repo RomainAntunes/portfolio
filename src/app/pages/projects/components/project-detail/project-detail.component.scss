@@ -78,7 +78,20 @@
   align-items: center;
 }
 
+.project-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  & span {
+    display: block;
+  }
+}
+
 .project-link {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 
   & a {
     color: var(--jet);
@@ -91,5 +104,6 @@
 }
 
 .project-description {
-  margin: 25px 0;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
 }

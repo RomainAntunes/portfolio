@@ -17,7 +17,7 @@ import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMail, ionMailOutline} f
     ProjectsComponent,
     ProjectDetailComponent,
     PersonnalComponent,
-    DotsComponent
+    DotsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMail, ionMailOutline} f
       ionLogoGithub,
       ionMailOutline,
       ionCodeSlash,
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
