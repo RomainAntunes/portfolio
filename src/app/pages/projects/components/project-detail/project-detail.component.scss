@@ -9,7 +9,12 @@
   padding: 30px 35px 0 35px;
 
   color: #fff;
-  background-color: var(--cambridge-blue)
+  background-color: var(--cambridge-blue);
+
+  & .project-description {
+    margin-bottom: 2rem;
+    white-space: pre-wrap;
+  }
 }
 
 .project-header {
@@ -130,11 +135,6 @@
       font-size: 12px;
     }
   }
-}
-
-.project-description {
-  margin-bottom: 2rem;
-  white-space: pre-wrap;
 }
 
 @keyframes pulse {

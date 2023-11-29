@@ -57,11 +57,12 @@ a {
   }
 
   & .project-description {
-    max-height: 40px;
-    min-height: 30px;
-
-    text-overflow: ellipsis;
+    line-height: 1.5em;
+    height: 1.5em;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 }
 
