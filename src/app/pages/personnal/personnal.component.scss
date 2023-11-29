@@ -101,3 +101,18 @@
     color: var(--jet);
   }
 }
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  .presentation {
+    height: 100%;
+    padding: 100px 0;
+
+    display: flex;
+    justify-content: center;
+
+    .status-group {
+      margin: 0;
+    }
+  }
+}
