@@ -1,26 +1,22 @@
-<div class="presentation">
-  <div>
-    <div class="status-group">
-      <img class="status-svg"
-           ngSrc="assets/memoji.svg"
-           height="305"
-           width="305"
-           alt="memoji of myself behind a computer"
-           priority="1">
+<header class="presentation">
 
-      <span class="status-message">Actuellement {{available ? '' : 'non '}} disponible 😄</span>
+  <div class="status-group" style="margin-top: 35px;">
+    <img class="status-svg"
+         ngSrc="assets/memoji.svg"
+         height="305"
+         width="305"
+         alt="memoji of myself behind a computer"
+         priority="1">
 
-      <app-dots></app-dots>
-    </div>
+    <span class="status-message">Actuellement {{available ? '' : 'non '}} disponible 😄</span>
 
+    <app-dots [rows]="5" [columns]="5" [scale]="5"></app-dots>
   </div>
 
-  <div>
-    <div class="welcome">
-      <h2 class="text-welcome">Hey ! i'm -</h2>
-      <h1 class="text-personal">Romain Antunes</h1>
-    </div>
 
+  <div class="welcome">
+    <h2 class="text-welcome">Hey ! i'm -</h2>
+    <h1 class="text-personal">Romain Antunes</h1>
 
     <h3 class="text-currentJob"> {{currentJob}} </h3>
     <div>
@@ -31,15 +27,10 @@
       </ul>
     </div>
   </div>
-</div>
+</header>
 
-
-<div style="margin-top: 50px;">
+<section style="margin-top: 50px;">
   <app-projects></app-projects>
-</div>
-
-<div style="margin-top: 50px;">
-  <app-contact></app-contact>
-</div>
+</section>
 
 <!-- Made with love by Romain Antunes ❤️ -->

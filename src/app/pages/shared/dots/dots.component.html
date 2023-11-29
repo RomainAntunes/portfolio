@@ -1,27 +1,4 @@
-<div class="grid-dots">
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
+<div class="grid-dots"
+     [style]="'transform: translate('+moveX+'px, '+moveY+'px);grid-template-columns: repeat('+columns+', 10px)'">
+  <span *ngFor="let _ of [].constructor(columns*rows)" class="dots"></span>
 </div>

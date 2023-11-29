@@ -21,6 +21,10 @@ export class PersonnalComponent {
     {
       name: 'GitHub',
       link: 'https://github.com/romainantunes'
+    },
+    {
+      name: 'Mail',
+      link: 'mailto:romain.antunes@proton.me'
     }
   ];
 }

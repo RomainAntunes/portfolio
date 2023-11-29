@@ -7,7 +7,6 @@ import {ProjectsComponent} from './pages/projects/projects.component';
 import {ProjectDetailComponent} from './pages/projects/components/project-detail/project-detail.component';
 import {PersonnalComponent} from './pages/personnal/personnal.component';
 import {NgOptimizedImage} from "@angular/common";
-import {ContactComponent} from './pages/contact/contact.component';
 import {DotsComponent} from './pages/shared/dots/dots.component';
 import {NgIconsModule} from "@ng-icons/core";
 import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdriver} from "@ng-icons/heroicons/outline";
@@ -18,7 +17,6 @@ import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdri
     ProjectsComponent,
     ProjectDetailComponent,
     PersonnalComponent,
-    ContactComponent,
     DotsComponent
   ],
   imports: [

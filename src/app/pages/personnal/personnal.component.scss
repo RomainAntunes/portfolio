@@ -9,31 +9,58 @@
   height: 305px;
   width: 305px;
   margin: 0 auto;
+
+  & app-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  & .status-message {
+    z-index: 30;
+
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+
+    padding: 6px 14px;
+    margin-top: 20px;
+
+    border-radius: 6px;
+    font-size: 1.2rem;
+    text-align: center;
+
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.15);
+
+    color: var(--jet);
+    background: #fff;
+  }
+
+  & .status-svg {
+    z-index: 20;
+    border-radius: 50%;
+  }
 }
 
-.status-message {
-  z-index: 30;
+/* TEXT */
+.welcome {
+  margin-top: 4rem;
+  padding: 15px 25px;
 
-  position: absolute;
-  left: 0;
-  bottom: 25px;
+  .text-welcome {
+    color: var(--jet);
+  }
 
-  padding: 6px 14px;
-  margin-top: 20px;
+  .text-personal {
+    margin-top: -30px;
+    color: #fff;
+  }
 
-  border-radius: 6px;
-  font-size: 1.2rem;
-  text-align: center;
-
-  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.15);
-
-  color: var(--jet);
-  background: #fff;
-}
-
-.status-svg {
-  z-index: 20;
-  border-radius: 50%;
+  .text-currentJob {
+    margin-top: 55px;
+    color: #fff;
+  }
 }
 
 /* SOCIALS */
@@ -45,7 +72,6 @@
   gap: 20px;
 
   list-style: none;
-  overflow-x: auto;
 }
 
 .social-link {
@@ -54,43 +80,24 @@
   align-items: center;
   justify-content: center;
 
-  padding: 8px 10px;
+  margin-top: 20px;
+  padding: 14px 18px;
   border-radius: 30px;
+  font-weight: 600;
 
   color: #fff;
   background: var(--light-goldenrod);
   transition: .3s ease-in;
-}
 
-.social-link:hover {
-  scale: 1.1;
-  box-shadow: 0 0 1px 4px rgba(0, 0, 0, 0.15);
-}
+  &:hover {
+    scale: 1.1;
+    box-shadow: 0 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
 
-.social-link > a {
-  text-decoration: none;
-  text-underline: none;
+  & a {
+    text-decoration: none;
+    text-underline: none;
 
-  color: var(--jet);
-}
-
-/* TEXT */
-.welcome {
-  margin: 0;
-  padding: 0;
-
-  line-height: .3;
-}
-
-.text-welcome {
-  color: var(--jet);
-}
-
-.text-personal {
-  color: #fff;
-}
-
-.text-currentJob {
-  margin-top: 45px;
-  color: #fff;
+    color: var(--jet);
+  }
 }
