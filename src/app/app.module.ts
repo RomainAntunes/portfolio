@@ -9,6 +9,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {DotsComponent} from './pages/shared/dots/dots.component';
 import {NgIconsModule} from "@ng-icons/core";
 import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdriver} from "@ng-icons/heroicons/outline";
+import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMail, ionMailOutline} from "@ng-icons/ionicons";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,17 @@ import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdri
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    NgIconsModule.withIcons({ heroArrowLeft, heroWrenchScrewdriver, heroLink, heroCpuChip, heroArrowRight }),
+    NgIconsModule.withIcons({
+      heroArrowLeft,
+      heroArrowRight,
+      heroWrenchScrewdriver,
+      heroLink,
+      heroCpuChip,
+      ionLogoLinkedin,
+      ionLogoGithub,
+      ionMailOutline,
+      ionCodeSlash,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
