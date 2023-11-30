@@ -117,6 +117,89 @@ export class ProjectsService {
         Technologies.Grafana,
         Technologies.Redis,
       ]
+    },
+    {
+      slug: 'twitter-image-api',
+      name: 'Twitter Image ISS',
+      description: '',
+      image: undefined,
+      in_progress: false,
+      technologies: [
+        Technologies.Node,
+        Technologies.Express,
+        Technologies.TwitterAPI,
+        Technologies.Docker,
+        Technologies.GIT,
+      ]
+    },
+    {
+      slug: 'geoguessr-cheat',
+      name: 'GeoGuessr Cheat',
+      description: 'GeoGuessr is a geography game which takes you on a journey around the world and challenges your ability to recognize your surroundings.\n\n' +
+        'I have developed a cheat for GeoGuessr.',
+      image: undefined,
+      in_progress: false,
+      links: [
+        {
+          name: 'GeoGuessr Cheat Github',
+          url: 'https://github.com/RomainAntunes/geoguessr-cheat'
+        }
+      ],
+      technologies: [
+        Technologies.JavaScript,
+        Technologies.GIT,
+      ]
+    },
+    {
+      slug: 'fivem-bodycam',
+      name: 'FiveM Bodycam',
+      description: 'FiveM is a modification for Grand Theft Auto V enabling you to play multiplayer on customized dedicated servers.\n\n' +
+        'I have developed a bodycam for FiveM.',
+      image: undefined,
+      in_progress: false,
+      links: [
+        {
+          name: 'FiveM Bodycam Github',
+          url: 'https://github.com/RomainAntunes/fivem-bodycam-overlay/settings'
+        }
+      ],
+      technologies: [
+        Technologies.Lua,
+        Technologies.FiveM,
+        Technologies.GIT,
+      ]
+    },
+    {
+      slug: 'manager-discord',
+      name: 'Manager Discord',
+      description: 'Manager Discord is a Discord bot that allows you to manage your server.\n\n' +
+        'You can create a ticket system, a moderation system, a leveling system and much more.',
+      image: undefined,
+      in_progress: false,
+      technologies: [
+        Technologies.Node,
+        Technologies.Discord,
+        Technologies.DiscordAPI,
+        Technologies.MongoDB,
+        Technologies.Docker,
+        Technologies.GIT,
+        Technologies.Express,
+        Technologies.OAuth2,
+        Technologies.Redis,
+      ]
+    },
+    {
+      slug: 'fivem-scripts',
+      name: 'FiveM Scripts',
+      description: 'FiveM is a modification for Grand Theft Auto V enabling you to play multiplayer on customized dedicated servers.\n\n' +
+        'I have developed several scripts for FiveM.',
+      image: undefined,
+      in_progress: false,
+      technologies: [
+        Technologies.Lua,
+        Technologies.FiveM,
+        Technologies.GIT,
+      ]
     }
   ];
 
