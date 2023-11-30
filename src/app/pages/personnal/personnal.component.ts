@@ -8,7 +8,7 @@ import {Social} from "./models/social";
 })
 export class PersonnalComponent {
 
-  currentJob: string = 'Apprenti - Développement d\'application';
+  currentJob: string = 'Software developer';
   currentJobStartDate: string = 'August 2020';
   available: boolean = true;
 

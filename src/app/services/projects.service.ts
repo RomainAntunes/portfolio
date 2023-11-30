@@ -160,7 +160,7 @@ export class ProjectsService {
       links: [
         {
           name: 'FiveM Bodycam Github',
-          url: 'https://github.com/RomainAntunes/fivem-bodycam-overlay/settings'
+          url: 'https://github.com/RomainAntunes/fivem-bodycam-overlay'
         }
       ],
       technologies: [
