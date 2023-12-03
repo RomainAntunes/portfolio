@@ -59,4 +59,5 @@ export enum Technologies {
   OAuth2 = "OAuth2",
   Lua = "Lua",
   FiveM = "FiveM",
+  TailwindCSS = "Tailwind CSS",
 }

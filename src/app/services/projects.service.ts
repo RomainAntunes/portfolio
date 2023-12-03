@@ -62,6 +62,31 @@ export class ProjectsService {
       ]
     },
     {
+      slug: 'pomodoro',
+      name: 'Pomodoro',
+      description: 'Pomodoro is a web application that allows you to manage your time.\n\n' +
+        'You can create a timer with the time you set yourself to revise.\n\n' +
+        'The application will inform you when to take a break and give you some tips/ tricks when the breaks are done.',
+      image: 'assets/screenshots/pomodoro.jpeg',
+      in_progress: true,
+      links: [
+        {
+          name: 'Pomodoro Website',
+          url: 'https://pomodoro.romainantunes.dev'
+        },
+        {
+          name: 'Pomodoro Github',
+          url: 'https://github.com/romainantunes/pomodoro'
+        }
+      ],
+      technologies: [
+        Technologies.Angular,
+        Technologies.Node,
+        Technologies.GIT,
+        Technologies.TailwindCSS,
+      ]
+    },
+    {
       slug: 'mercure',
       name: 'Mercure',
       description: 'Mercure is a web application that allows you to manage your customers, your products and your orders.\n\n' +
@@ -121,9 +146,15 @@ export class ProjectsService {
     {
       slug: 'twitter-image-api',
       name: 'Twitter Image ISS',
-      description: '',
+      description: 'I have developed a bot that posts a picture of where the International Space Station is located every 30 minutes and it also posted the forecast of where was the ISS.',
       image: undefined,
       in_progress: false,
+      links: [
+        {
+          name: 'Twitter Image ISS Twitter',
+          url: 'https://x.com/@whereisiss'
+        }
+      ],
       technologies: [
         Technologies.Node,
         Technologies.Express,

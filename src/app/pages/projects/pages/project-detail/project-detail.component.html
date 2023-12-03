@@ -26,9 +26,11 @@
     <ng-container *ngIf="project.links">
       <h3>Links</h3>
       <div class="project-link">
-        <a  *ngFor="let link of project.links"
-            [href]="link.url">
-          {{ link.name }} <ng-icon name="heroLink"></ng-icon>
+        <a *ngFor="let link of project.links"
+           [href]="link.url"
+           target="_blank">
+          {{ link.name }}
+          <ng-icon name="heroLink"></ng-icon>
         </a>
       </div>
     </ng-container>
