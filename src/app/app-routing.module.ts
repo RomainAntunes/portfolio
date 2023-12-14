@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        title: 'Home | Romain Antunes',
+        title: 'Hi, I\'m Romain Antunes',
         component: HomeComponent,
       },
       {

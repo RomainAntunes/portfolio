@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {NgIcon} from "@ng-icons/core";
 import { FooterComponent } from './components/footer/footer.component';
+import {DarkmodeService} from "./services/darkmode.service";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -20,7 +22,16 @@ import { FooterComponent } from './components/footer/footer.component';
     CommonModule,
     RouterLink,
     NgIcon,
-    RouterLinkActive
+    RouterLinkActive,
+    FormsModule
+  ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (darkmodeService: DarkmodeService) => () => darkmodeService.loadDarkMode(),
+      deps: [DarkmodeService],
+      multi: true
+    }
   ]
 })
 export class SharedModule { }
