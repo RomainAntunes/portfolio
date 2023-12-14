@@ -3,9 +3,9 @@
 <div class="last:!border-b-0 mt-4">
   <div *ngFor="let project of projects">
     <a class="w-full" [routerLink]="['/', 'projects', project.slug]">
-      <div class="flex border-dashed font-medium w-full py-3 md:py-[12px] border-b border-gray-200 hover:border-gray-400 flex-row text-gray-800 ">
+      <div class="flex border-dashed font-medium w-full py-3 md:py-[12px] border-b border-gray-200 hover:border-gray-400 rounded-full flex-row text-gray-800 ">
         <ng-container *ngIf="project.img; else noImage">
-          <img [width]="24" [height]="24" class="w-[24px] h-[24px]" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+          <img [width]="24" [height]="24" class="w-[24px] h-[24px] rounded-full" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
         </ng-container>
         <ng-template #noImage>
           <div class="w-[24px] h-[24px] rounded-full bg-gray-200 text-center leading-6 font-medium text-md">

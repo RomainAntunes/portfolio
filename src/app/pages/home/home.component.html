@@ -13,13 +13,12 @@
 
 <div class="grid grid-cols-3 gap-6 mt-4">
   <a *ngFor="let project of projects"
-     target="_blank"
-     [href]="project.website || project.github || null"
+     [routerLink]="['/projects', project.slug]"
      class="w-full h-full border border-gray-100 rounded-xl p-4 shadow-sm">
     <div class="flex justify-between">
       <div [ngClass]="'shadow-[0_0_8px_' + (project.mainColor ?? '#e3e3e3') + ']'">
         <ng-container *ngIf="project.img; else noImage">
-          <img [width]="40" [height]="40" class="w-[40px]" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+          <img [width]="40" [height]="40" class="w-[40px] h-[40px] rounded-full" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
         </ng-container>
         <ng-template #noImage>
           <div class="w-[40px] h-[40px] rounded-full bg-gray-200 text-center leading-10 font-medium text-xl">
