@@ -1,5 +1,7 @@
-<div class="max-w-2xl mt-4 mx-auto flex flex-col gap-8">
+<div class="max-w-2xl mx-auto flex flex-col gap-8 pt-[32px] md:pt-[56px] min-h-screen">
   <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <main class="relative w-full">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer class="w-full mt-auto pt-12 "></app-footer>
 </div>

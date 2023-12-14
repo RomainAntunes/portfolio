@@ -1,3 +1,5 @@
+import {Technology} from "./technology";
+
 export interface Project {
   img: string;
   title: string;
@@ -8,4 +10,5 @@ export interface Project {
   inUse: boolean;
   inProgress: boolean;
   mainColor?: string;
+  technologies?: Technology[];
 }

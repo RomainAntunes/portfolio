@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NavItem} from "../../models/NavItem";
 import {SocialItem} from "../../models/SocialItem";
-import {ionCodeSlash} from "@ng-icons/ionicons";
 
 @Component({
   selector: 'app-navbar',

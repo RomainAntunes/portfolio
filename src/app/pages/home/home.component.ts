@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Project} from "../../shared/models/project";
+import {Technology} from "../../shared/models/technology";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,15 @@ export class HomeComponent {
       github: 'https://github.com/wiiseto',
       inUse: false,
       inProgress: true,
-      mainColor: 'rgba(21,75,201, 0.6)'
+      mainColor: 'rgba(21,75,201, 0.6)',
+      technologies: [
+        Technology.Angular,
+        Technology.SpringBoot,
+        Technology.AWS,
+        Technology.PostgreSQL,
+        Technology.Docker,
+        Technology.TailwindCSS
+      ]
     },
     {
       img: '',
@@ -28,6 +37,10 @@ export class HomeComponent {
       github: 'https://github.com/romainantunes/pomodoro',
       inUse: true,
       inProgress: true,
+      technologies: [
+        Technology.Angular,
+        Technology.TailwindCSS
+      ]
     },
   ]
 }

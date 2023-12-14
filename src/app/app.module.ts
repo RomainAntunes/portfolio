@@ -9,12 +9,14 @@ import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMailOutline} from "@ng-
 import {HomeComponent} from './pages/home/home.component';
 import {SharedModule} from "./shared/shared.module";
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectsListComponent } from './pages/projects-list/projects-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectsComponent,
+    ProjectsListComponent,
   ],
   imports: [
     BrowserModule,
