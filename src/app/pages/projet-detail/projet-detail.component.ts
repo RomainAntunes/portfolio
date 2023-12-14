@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectsService} from "../../shared/services/projects.service";
 import {Project} from "../../shared/models/project";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-projet-detail',
@@ -16,7 +17,8 @@ export class ProjetDetailComponent implements OnInit {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    private readonly projectService: ProjectsService
+    private readonly projectService: ProjectsService,
+    private readonly titleService: Title
   ) {
   }
 
@@ -27,5 +29,7 @@ export class ProjetDetailComponent implements OnInit {
     if (!this.project) {
       this.router.navigate(['/projects']);
     }
+
+    this.titleService.setTitle(this.project?.title + " - Romain Antunes");
   }
 }

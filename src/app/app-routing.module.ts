@@ -15,7 +15,7 @@ const routes: Routes = [
       },
       {
         path: 'projects',
-        title: 'Projects | Romain Antunes',
+        title: 'Projects - Romain Antunes',
         children: [
           {
             path: '',
