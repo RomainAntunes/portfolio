@@ -47,4 +47,8 @@ export class ProjectsService {
   getProjects() {
     return this.projects;
   }
+
+  findProjectByName(title: string) {
+    return this.projects.find(project => project.slug === title);
+  }
 }
