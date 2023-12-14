@@ -1,1 +1,41 @@
-<p>home works!</p>
+<h1 class="text-4xl">Hi 👋, I'm <b>Romain Antunes</b></h1>
+
+<ul class="ml-5 mt-6 list-disc text-gray-500 gap-2 flex flex-col text-md">
+  <li>Software developer, based in Lausanne 🇨🇭</li>
+  <li>Building <a href="https://wiiseto.com" class="underline">Wiiseto</a> (team management for real estate projet)</li>
+  <li>Working for the <a class="underline">State of Vaud (DGNSI)</a></li>
+  <li>Love to travel, explore and learn new things</li>
+</ul>
+
+<hr class="my-8"/>
+
+<h3 class="text-2xl">Side-projects</h3>
+
+<div class="grid grid-cols-3 gap-6 mt-4">
+  <a *ngFor="let project of projects"
+     target="_blank"
+     [href]="project.website || project.github || null"
+     class="w-full h-full border border-gray-100 rounded-xl p-4 shadow-sm">
+    <div class="flex justify-between">
+      <div [ngClass]="'shadow-[0_0_8px_' + (project.mainColor ?? '#e3e3e3') + ']'">
+        <ng-container *ngIf="project.img; else noImage">
+          <img [width]="40" [height]="40" class="w-[40px]" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+        </ng-container>
+        <ng-template #noImage>
+          <div class="w-[40px] h-[40px] rounded-full bg-gray-200 text-center leading-10 font-medium text-xl">
+            {{ project.title[0] }}
+          </div>
+        </ng-template>
+      </div>
+      <ng-icon class="opacity-50 text-lg" name="heroArrowTopRightOnSquare"></ng-icon>
+    </div>
+    <div class="mt-4 flex flex-row gap-2 items-center">
+      <h5 class="font-medium text-lg">{{project.title}}</h5>
+      <div class="w-2 h-2 rounded-full"
+           [ngClass]="{'bg-green-400 shadow-sm shadow-green-400': project.inProgress}"></div>
+    </div>
+    <div class="mt-1 text-sm opacity-75 text-gray-600">
+      {{project.description}}
+    </div>
+  </a>
+</div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Project} from "../../shared/models/project";
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,26 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  projects: Project[] = [
+    {
+      img: '',
+      title: 'Wiiseto',
+      description: 'A web application to manage for real estate project',
+      slug: 'wiiseto',
+      github: 'https://github.com/wiiseto',
+      inUse: false,
+      inProgress: true,
+      mainColor: 'rgba(21,75,201, 0.6)'
+    },
+    {
+      img: '',
+      title: 'Pomodoro',
+      description: 'My personal pomodoro timer, made with Angular',
+      slug: 'pomodoro',
+      website: 'https://pomodoro.romainantunes.dev',
+      github: 'https://github.com/romainantunes/pomodoro',
+      inUse: true,
+      inProgress: true,
+    },
+  ]
 }
