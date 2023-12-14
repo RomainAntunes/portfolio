@@ -11,7 +11,7 @@
 
 <h3 class="text-2xl">Side-projects</h3>
 
-<div class="grid grid-cols-3 gap-6 mt-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
   <a *ngFor="let project of projects"
      [routerLink]="['/projects', project.slug]"
      class="w-full h-full border border-gray-100 rounded-xl p-4 shadow-sm">
