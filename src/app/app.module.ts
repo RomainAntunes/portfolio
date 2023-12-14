@@ -9,7 +9,14 @@ import {NgOptimizedImage} from "@angular/common";
 import {DotsComponent} from './pages/shared/dots/dots.component';
 import {NgIconsModule} from "@ng-icons/core";
 import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdriver} from "@ng-icons/heroicons/outline";
-import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMail, ionMailOutline} from "@ng-icons/ionicons";
+import {
+  ionCodeSlash,
+  ionDocumentText,
+  ionLogoGithub,
+  ionLogoLinkedin,
+  ionMail,
+  ionMailOutline
+} from "@ng-icons/ionicons";
 
 @NgModule({
   declarations: [
@@ -33,6 +40,7 @@ import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMail, ionMailOutline} f
       ionLogoGithub,
       ionMailOutline,
       ionCodeSlash,
+      ionDocumentText
     }),
   ],
   providers: [],

@@ -24,6 +24,11 @@ export class PersonnalComponent {
       icon: 'ionLogoGithub'
     },
     {
+      name: 'CV',
+      link: '/assets/pdf/CV_Romain_Antunes.pdf',
+      icon: 'ionDocumentText'
+    },
+    {
       name: 'CodinGame',
       link: 'https://codingame.com/profile/defc3ee5279aecc1bb6114e1f994ea9b3325423',
       icon: 'ionCodeSlash',
