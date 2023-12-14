@@ -1,1 +1,21 @@
-<p>projects works!</p>
+<h2 class="text-2xl">Slide projects</h2>
+
+<div class="last:!border-b-0 mt-4">
+  <div *ngFor="let project of projects">
+    <a class="w-full" [href]="'/projects/' + project.slug">
+      <div class="flex border-dashed font-medium w-full py-3 md:py-[12px] border-b border-gray-200 hover:border-gray-400 flex-row text-gray-800 ">
+        <ng-container *ngIf="project.img; else noImage">
+          <img [width]="24" [height]="24" class="w-[24px] h-[24px]" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+        </ng-container>
+        <ng-template #noImage>
+          <div class="w-[24px] h-[24px] rounded-full bg-gray-200 text-center leading-6 font-medium text-md">
+            {{ project.title[0] }}
+          </div>
+        </ng-template>
+        <h2 class="font-semibold ml-3">
+          {{project.title}}
+        </h2>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProjectsService} from "../../shared/services/projects.service";
 
 @Component({
   selector: 'app-projects',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
+  projects = this.projectsService.getProjects();
+
+  constructor(
+    private readonly projectsService: ProjectsService,
+  ) {
+  }
 }
