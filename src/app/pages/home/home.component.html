@@ -18,7 +18,8 @@
     <div class="flex justify-between">
       <div [ngClass]="'shadow-[0_0_8px_' + (project.mainColor ?? '#e3e3e3') + ']'">
         <ng-container *ngIf="project.img; else noImage">
-          <img [width]="40" [height]="40" class="w-[40px] h-[40px] rounded-full" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+          <img [width]="40" [height]="40" class="w-[40px] h-[40px] rounded-full" [ngSrc]="project.img"
+               [alt]="'logo of my side project named ' + project.title">
         </ng-container>
         <ng-template #noImage>
           <div class="w-[40px] h-[40px] rounded-full bg-gray-200 text-center leading-10 font-medium text-xl">
@@ -31,7 +32,10 @@
     <div class="mt-4 flex flex-row gap-2 items-center">
       <h5 class="font-medium text-lg">{{project.title}}</h5>
       <div class="w-2 h-2 rounded-full"
-           [ngClass]="{'bg-green-400 shadow-sm shadow-green-400': project.inProgress}"></div>
+           [ngClass]="{'bg-green-400 shadow-sm shadow-green-400': (project.inProgress || project.inUse),
+           'bg-red-400 shadow-sm shadow-red-400': (!project.inProgress && !project.inUse)
+           }"
+      ></div>
     </div>
     <div class="mt-1 text-sm opacity-75 text-gray-600">
       {{project.description}}
