@@ -2,46 +2,34 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ProjectsComponent} from './pages/projects/projects.component';
-import {ProjectDetailComponent} from './pages/projects/pages/project-detail/project-detail.component';
-import {PersonnalComponent} from './pages/personnal/personnal.component';
 import {NgOptimizedImage} from "@angular/common";
-import {DotsComponent} from './pages/shared/dots/dots.component';
 import {NgIconsModule} from "@ng-icons/core";
-import {heroArrowLeft, heroArrowRight, heroCpuChip, heroLink, heroWrenchScrewdriver} from "@ng-icons/heroicons/outline";
-import {
-  ionCodeSlash,
-  ionDocumentText,
-  ionLogoGithub,
-  ionLogoLinkedin,
-  ionMail,
-  ionMailOutline
-} from "@ng-icons/ionicons";
+import {heroArrowTopRightOnSquare, heroCpuChip, heroHome} from "@ng-icons/heroicons/outline";
+import {ionCodeSlash, ionLogoGithub, ionLogoLinkedin, ionMailOutline} from "@ng-icons/ionicons";
+import {HomeComponent} from './pages/home/home.component';
+import {SharedModule} from "./shared/shared.module";
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     ProjectsComponent,
-    ProjectDetailComponent,
-    PersonnalComponent,
-    DotsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
     NgIconsModule.withIcons({
-      heroArrowLeft,
-      heroArrowRight,
-      heroWrenchScrewdriver,
-      heroLink,
+      heroHome,
       heroCpuChip,
+      heroArrowTopRightOnSquare,
       ionLogoLinkedin,
       ionLogoGithub,
       ionMailOutline,
       ionCodeSlash,
-      ionDocumentText
     }),
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
