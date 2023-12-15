@@ -63,6 +63,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "sslKey": "/Users/romain/ssl-key/localhost-key.pem",
+            "sslCert": "/Users/romain/ssl-key/localhost.pem"
+          },
           "configurations": {
             "production": {
               "browserTarget": "porfolio:build:production"

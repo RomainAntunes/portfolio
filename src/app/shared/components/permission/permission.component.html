@@ -1,0 +1,24 @@
+<ng-container *ngIf="isMobile && (filterListPermission$ | async) as listPermission">
+  <div
+    *ngFor="let permission of listPermission; index as i"
+    class="fixed bottom-10 right-0 mx-[5%] w-[90%] px-2 py-3 shadow justify-between flex border border-gray-200 rounded-lg p-4 bg-white dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-700"
+    [style]="'transform: translateY('+(i*(-10))+'px) scale('+(1 - (0.04 * i))+');' +
+     'opacity: '+(100 - (i*20))+'%;' +
+     'z-index: '+(listPermission.length - i)">
+    <ng-container *ngIf="i<4">
+      <div class="dark:text-white text-neutral-950 text-md leading-8">
+        <span>{{permission.text}}</span>
+      </div>
+      <div>
+        <button class="px-2 py-1 underline text-gray-500 text-center text-sm mr-2 rounded"
+          (click)="refusePermission(permission.id)">
+          Refuse
+        </button>
+        <button class="px-2 py-1 bg-gray-950 shadow-md text-white text-center font-medium text-md rounded" (click)="grantPermission(permission);"
+                [disabled]="i !== 0">
+          {{ permission.btnText ?? 'Accept' }}
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

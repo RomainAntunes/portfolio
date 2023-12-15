@@ -6,17 +6,21 @@ import {NgIcon} from "@ng-icons/core";
 import { FooterComponent } from './components/footer/footer.component';
 import {DarkmodeService} from "./services/darkmode.service";
 import {FormsModule} from "@angular/forms";
+import { PermissionComponent } from './components/permission/permission.component';
+import {PermissionsService} from "./services/permissions.service";
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PermissionComponent
   ],
   exports: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PermissionComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +34,12 @@ import {FormsModule} from "@angular/forms";
       provide: APP_INITIALIZER,
       useFactory: (darkmodeService: DarkmodeService) => () => darkmodeService.loadDarkMode(),
       deps: [DarkmodeService],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (permissionsService: PermissionsService) => () => permissionsService.loadPermission(),
+      deps: [PermissionsService],
       multi: true
     }
   ]

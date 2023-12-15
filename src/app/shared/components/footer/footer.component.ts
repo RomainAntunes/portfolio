@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DarkmodeService} from "../../services/darkmode.service";
 import {Observable} from "rxjs";
 import {DarkModeState, DarkModeStateMapping} from "../../models/darkModeState";
+import {PermissionsService} from "../../services/permissions.service";
 
 @Component({
   selector: 'app-footer',
@@ -14,9 +15,11 @@ export class FooterComponent implements OnInit {
 
   darkMode$!: Observable<DarkModeState>;
   darkModeState = Object.values(DarkModeState);
+  isMobile: boolean = this.permissionService.isMobile;
 
   constructor(
-    private readonly darkModeService: DarkmodeService
+    private readonly darkModeService: DarkmodeService,
+    private readonly permissionService: PermissionsService,
   ) {
   }
 
@@ -28,5 +31,9 @@ export class FooterComponent implements OnInit {
 
   onChange(value: DarkModeState) {
     this.darkModeService.setDarkMode(value);
+  }
+
+  resetPermission() {
+    this.permissionService.resetPermission();
   }
 }
