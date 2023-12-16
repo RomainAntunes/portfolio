@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectsService} from "../../shared/services/projects.service";
-import {Project} from "../../shared/models/project";
+import {Project, ProjectGithub} from "../../shared/models/project";
 import {Title} from "@angular/platform-browser";
+import {GithubService} from "../../shared/services/github.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-projet-detail',
@@ -13,12 +15,14 @@ export class ProjetDetailComponent implements OnInit {
 
   slug?: string;
   project?: Project;
+  readMe$: Observable<string> = new Observable<string>();
 
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly projectService: ProjectsService,
-    private readonly titleService: Title
+    private readonly titleService: Title,
+    private readonly githubService: GithubService
   ) {
   }
 
@@ -31,5 +35,13 @@ export class ProjetDetailComponent implements OnInit {
     }
 
     this.titleService.setTitle(this.project?.title + " - Romain Antunes");
+
+    if (this.project?.github) {
+      this.readMe$ = this.githubService.getReadMe(this.project?.github);
+    }
+  }
+
+  generateGitHubUrl(github: string | ProjectGithub) {
+    return this.githubService.generateGitHubUrl(github);
   }
 }

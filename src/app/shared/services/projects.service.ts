@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Project} from "../models/project";
 import {Technology} from "../models/technology";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,10 @@ export class ProjectsService {
       description: 'My personal pomodoro timer, made with Angular',
       slug: 'pomodoro',
       website: 'https://pomodoro.romainantunes.dev',
-      github: 'https://github.com/romainantunes/pomodoro',
+      github: {
+        url: 'https://github.com/romainantunes/pomodoro',
+        name: 'pomodoro'
+      },
       inUse: true,
       inProgress: true,
       technologies: [
@@ -46,7 +50,10 @@ export class ProjectsService {
       description: 'My actual portfolio, made with Angular',
       slug: 'portfolio',
       website: 'https://romainantunes.dev',
-      github: 'https://github.com/romainantunes/portfolio',
+      github: {
+        url: 'https://github.com/romainantunes/portfolio',
+        name: 'portfolio'
+      },
       inUse: true,
       inProgress: true,
       technologies: [
@@ -60,7 +67,11 @@ export class ProjectsService {
       description: 'My old portfolio',
       slug: 'pomodoro-old',
       website: 'https://old.romainantunes.dev',
-      github: 'https://github.com/RomainAntunes/portfolio/tree/v1.0.0',
+      github: {
+        url: 'https://github.com/RomainAntunes/portfolio/tree/v1.0.0',
+        name: 'portfolio',
+        version: 'v1.0.0'
+      },
       inUse: false,
       inProgress: false,
       technologies: [
@@ -73,7 +84,11 @@ export class ProjectsService {
       title: 'Mercure',
       description: 'E-commerce website with storage management and checkout',
       slug: 'mercure',
-      github: 'https://github.com/Homie-s-Project/mercure',
+      github: {
+        url: 'https://github.com/Homie-s-Project/mercure',
+        name: 'mercure',
+        org: 'Homie-s-Project'
+      },
       inUse: false,
       inProgress: false,
       technologies: [
@@ -91,7 +106,11 @@ export class ProjectsService {
       title: 'Kairos',
       description: 'A web application to study with your friends',
       slug: 'kairos',
-      github: 'https://github.com/Homie-s-Project/kairos',
+      github: {
+        url: 'https://github.com/Homie-s-Project/kairos',
+        name: 'kairos',
+        org: 'Homie-s-Project'
+      },
       inUse: false,
       inProgress: false,
       technologies: [
@@ -123,7 +142,10 @@ export class ProjectsService {
       title: 'GeoGuessr Cheat',
       description: 'An extension to cheat on GeoGuessr, just need to click on the map and the extension will find the right location for you',
       slug: 'geoguessr-cheat',
-      github: 'https://github.com/RomainAntunes/geoguessr-cheat ',
+      github: {
+        url: 'https://github.com/RomainAntunes/geoguessr-cheat',
+        name: 'geoguessr-cheat',
+      },
       inUse: false,
       inProgress: false,
       technologies: [
@@ -136,7 +158,10 @@ export class ProjectsService {
       title: 'FiveM Bodycam',
       description: 'A web application to create a bodycam overlay for FiveM streamers',
       slug: 'fivem-bodycam',
-      github: 'https://github.com/RomainAntunes/fivem-bodycam-overlay ',
+      github: {
+        url: 'https://github.com/RomainAntunes/fivem-bodycam-overlay',
+        name: 'fivem-bodycam-overlay'
+      },
       inUse: false,
       inProgress: false,
       technologies: [
@@ -147,7 +172,10 @@ export class ProjectsService {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private readonly http: HttpClient
+  ) {
+  }
 
   getProjects() {
     return this.projects;

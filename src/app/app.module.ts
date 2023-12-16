@@ -10,6 +10,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {SharedModule} from "./shared/shared.module";
 import {ProjectsComponent} from './pages/projects/projects.component';
 import {ProjetDetailComponent} from './pages/projet-detail/projet-detail.component';
+import {MarkdownModule} from "ngx-markdown";
 
 @NgModule({
   declarations: [
@@ -32,8 +33,10 @@ import {ProjetDetailComponent} from './pages/projet-detail/projet-detail.compone
       ionCodeSlash,
     }),
     SharedModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

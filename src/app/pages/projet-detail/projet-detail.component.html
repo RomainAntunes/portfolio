@@ -5,7 +5,8 @@
            [alt]="'logo of my side project named ' + project.title">
     </ng-container>
     <ng-template #noImage>
-      <div class="w-[48px] h-[48px] dark:bg-gray-400 dark:text-gray-100 rounded-full bg-gray-200 text-center leading-[48px] font-bold text-lg">
+      <div
+        class="w-[48px] h-[48px] dark:bg-gray-400 dark:text-gray-100 rounded-full bg-gray-200 text-center leading-[48px] font-bold text-lg">
         {{ project.title[0] }}
       </div>
     </ng-template>
@@ -21,7 +22,7 @@
   </div>
   <div class="mt-6 grid auto-cols-fr grid-flow-col gap-3 text-center text-white">
     <ng-container *ngIf="project.github">
-      <a target="_blank" [href]="project.github"
+      <a target="_blank" [href]="generateGitHubUrl(project.github)"
          class="bg-gray-950 rounded py-2">
         <ng-icon name="ionLogoGithub"></ng-icon>
         Open on GitHub
@@ -34,5 +35,22 @@
         Web App
       </a>
     </ng-container>
+  </div>
+  <div class="mt-4">
+    <ng-container *ngIf="(readMe$ | async) as readmeContent; else isLoading">
+      <markdown
+        class="block float-left prose dark:prose-invert
+              prose-h1:font-bold prose-h1:text-xl
+              prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+              prose-headings:underline"
+        lineNumbers
+        [data]="readmeContent">
+      </markdown>
+    </ng-container>
+    <ng-template #isLoading>
+      <div class="mt-4 text-center font-medium">
+        Loading readme file from GitHub...
+      </div>
+    </ng-template>
   </div>
 </ng-container>
