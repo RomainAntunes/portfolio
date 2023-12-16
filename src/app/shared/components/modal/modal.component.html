@@ -1,0 +1,38 @@
+<ng-container *ngIf="(modals$ | async) as modal">
+  <div (click)="closeModal(modal.id)" class="fixed w-full h-full top-0 left-0 bg-gray-800 opacity-70 z-40"></div>
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-md aspect-16/9
+              w-full max-w-sm z-50 border border-gray-200 rounded-lg p-4 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-700">
+    <div class="flex justify-between items-center">
+      <div class="text-xl font-medium py-3 px-3">
+        {{modal.title}}
+      </div>
+      <button (click)="closeModal(modal.id)"
+              class="flex flex-row items-center text-lg py-3 px-3 font-medium cursor-pointer">
+        <ng-icon name="heroXMark"></ng-icon>
+      </button>
+    </div>
+    <div class="my-2 py-3 px-3">
+      <p class="whitespace-pre-line">
+        {{modal.content}}
+      </p>
+    </div>
+    <div class="flex flex-row justify-end gap-2 py-3 px-3">
+      <button class="px-3 py-1 rounded underline text-gray-950 dark:text-white text-md" (click)="closeModal(modal.id)">
+        Cancel
+      </button>
+      <ng-container *ngIf="modal.callback">
+        <button class="px-3 py-1 rounded bg-gray-900 text-white text-md" (click)="saveModal(modal.callback, modal.id)">
+          Save
+        </button>
+      </ng-container>
+      <ng-container *ngIf="modal.buttons">
+        <button *ngFor="let button of modal.buttons"
+                (click)="openSpecialCallback(button.callback, button.link, modal.id)"
+                class="px-3 py-1 rounded bg-gray-900 text-white text-md border border-gray-200 p-4 dark:border-gray-700
+                       dark:bg-gray-800 dark:hover:border-gray-700 hover:bg-gray-950 dark:hover:bg-gray-700">
+          {{button.text}}
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

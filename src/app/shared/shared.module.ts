@@ -8,6 +8,7 @@ import {DarkmodeService} from "./services/darkmode.service";
 import {FormsModule} from "@angular/forms";
 import { PermissionComponent } from './components/permission/permission.component';
 import {PermissionsService} from "./services/permissions.service";
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
@@ -15,12 +16,14 @@ import {PermissionsService} from "./services/permissions.service";
   declarations: [
     NavbarComponent,
     FooterComponent,
-    PermissionComponent
+    PermissionComponent,
+    ModalComponent
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
-    PermissionComponent
+    PermissionComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

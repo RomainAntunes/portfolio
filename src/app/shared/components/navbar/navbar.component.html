@@ -11,11 +11,20 @@
           </a>
         </ng-container>
         <ng-container *ngSwitchCase="true">
-          <a target="_blank" [href]="item.route" class="flex items-center gap-2 group">
-            {{ item.name }}
-            <ng-icon class="opacity-40 group-hover:opacity-100 duration-100 transition" *ngIf="item.icon"
-                     [name]="item.icon"></ng-icon>
-          </a>
+          <ng-container *ngIf="item.callback">
+            <button (click)="openSpecialCallback(item.callback, item.route)" class="flex items-center gap-2 group">
+              {{ item.name }}
+              <ng-icon class="opacity-40 group-hover:opacity-100 duration-100 transition" *ngIf="item.icon"
+                       [name]="item.icon"></ng-icon>
+            </button>
+          </ng-container>
+          <ng-template #noCallback>
+            <a target="_blank" [href]="item.route" class="flex items-center gap-2 group">
+              {{ item.name }}
+              <ng-icon class="opacity-40 group-hover:opacity-100 duration-100 transition" *ngIf="item.icon"
+                       [name]="item.icon"></ng-icon>
+            </a>
+          </ng-template>
         </ng-container>
       </li>
     </ul>
