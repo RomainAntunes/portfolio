@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Permission} from "../models/Permission";
+import {Permission} from "../models/permission";
 import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({

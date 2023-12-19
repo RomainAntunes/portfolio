@@ -45,6 +45,11 @@ export class ProjetDetailComponent implements OnInit {
         return;
       }
 
+      if (typeof this.project.github === 'string' && !this.project.github.endsWith('.md')) {
+        this.notFound = true;
+        return;
+      }
+
       this.readMe$ = this.githubService.getReadMe(this.project?.github)
         .pipe(
           catchError(

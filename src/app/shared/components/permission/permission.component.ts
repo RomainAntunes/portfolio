@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PermissionsService} from "../../services/permissions.service";
 import {filter, map, Observable, take, tap} from "rxjs";
-import {Permission} from "../../models/Permission";
+import {Permission} from "../../models/permission";
 
 @Component({
   selector: 'app-permission',
