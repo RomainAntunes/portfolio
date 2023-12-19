@@ -1,40 +1,21 @@
-<div>
-  <h1 class="projects-title">Projects</h1>
+<h2 class="text-2xl">Side projects</h2>
 
-  <div #projectsContent class="project-group">
-    <ng-container *ngIf="(projects$ | async) as projects">
-
-      <div class="project" *ngFor="let project of projects">
-        <a [routerLink]="project.slug">
-          <h2 class="project-title">
-            {{ project.name }}
-          </h2>
-
-          <ng-container *ngIf="project.image; else noImage">
-            <div class="project-image">
-              <img [src]="project.image" [alt]="'image of illustration for the ' + project.name + 'project'">
-            </div>
-          </ng-container>
-          <ng-template #noImage>
-            <div class="image-placeholder"></div>
-          </ng-template>
-
-          <p class="project-description">
-            {{ project.description }}
-          </p>
-        </a>
+<div class="last:!border-b-0 mt-4">
+  <div *ngFor="let project of projects">
+    <a class="w-full" [routerLink]="['/', 'projects', project.slug]">
+      <div class="flex border-dashed font-medium w-full py-3 md:py-[12px] border-b border-gray-200 hover:border-gray-400 flex-row text-gray-800 ">
+        <ng-container *ngIf="project.img; else noImage">
+          <img [width]="24" [height]="24" class="w-10 h-10 md:w-6 md:h-6 rounded-full" [ngSrc]="project.img" [alt]="'logo of my side project named ' + project.title">
+        </ng-container>
+        <ng-template #noImage>
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-400 dark:text-gray-100 text-center leading-10 md:leading-6 md:w-6 md:h-6 font-medium text-md">
+            {{ project.title[0] }}
+          </div>
+        </ng-template>
+        <h2 class="font-semibold ml-3 leading-10 md:leading-6 text-gray-950 dark:text-gray-50">
+          {{project.title}}
+        </h2>
       </div>
-    </ng-container>
-  </div>
-
-  <div class="slide-control">
-    <div
-      (click)="slideNext()">
-      <ng-icon name="heroArrowRight"></ng-icon>
-    </div>
-    <div
-      (click)="slidePrev()">
-      <ng-icon name="heroArrowLeft"></ng-icon>
-    </div>
+    </a>
   </div>
 </div>

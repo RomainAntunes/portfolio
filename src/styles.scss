@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: 'Work Sans', sans-serif;
-  background: var(--cambridge-blue);
-  padding: 0;
-  margin: 0;
+* {
+  font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
 }
 
-:root {
-  --light-goldenrod: #F3F9D2;
-  --cinereous: #93827F;
-  --laurel-green: #BDC4A7;
-  --jet: #2F2F2F;
-  --cambridge-blue: #92B4A7;
+:is(.dark body) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23/var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212/var(--tw-text-opacity));
 }
