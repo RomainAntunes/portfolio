@@ -19,8 +19,8 @@ export class DarkmodeService {
 
   loadDarkMode() {
     if (this.hasSavedDarkMode()) {
-      const stateLoaded: string = localStorage.getItem('darkMode') ?? DarkModeState.SYSTEM.valueOf();
-      this.darkMode = DarkModeState[stateLoaded as unknown as keyof typeof DarkModeState];
+      const stateLoaded: string = localStorage.getItem('darkMode') ?? DarkModeState.SYSTEM.toString();
+      this.darkMode = DarkModeState[stateLoaded.toUpperCase() as unknown as keyof typeof DarkModeState];
       this.darkModeBehaviourSubject$.next(this.darkMode);
     }
 
@@ -28,6 +28,7 @@ export class DarkmodeService {
       this.isSystemDarkMode();
     }
 
+    this.saveDarkMode();
     this.updateHtmlClass();
   }
 

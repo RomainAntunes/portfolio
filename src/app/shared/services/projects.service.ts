@@ -65,7 +65,7 @@ export class ProjectsService {
       img: 'assets/memoji.svg',
       title: 'Old Portfolio',
       description: 'My old portfolio',
-      slug: 'pomodoro-old',
+      slug: 'old-portfolio',
       website: 'https://old.romainantunes.dev',
       github: {
         url: 'https://github.com/RomainAntunes/portfolio/tree/v1.0.0',
@@ -145,6 +145,7 @@ export class ProjectsService {
       github: {
         url: 'https://github.com/RomainAntunes/geoguessr-cheat',
         name: 'geoguessr-cheat',
+        noReadMe: true
       },
       inUse: false,
       inProgress: false,

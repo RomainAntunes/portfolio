@@ -13,4 +13,4 @@ export interface Project {
   technologies?: Technology[];
 }
 
-export type ProjectGithub = { url: string, name: string, version?: string, org?: string, branch?: string };
+export type ProjectGithub = { url: string, name: string, version?: string, org?: string, branch?: string, noReadMe?: boolean };

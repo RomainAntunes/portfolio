@@ -4,7 +4,7 @@ import {ProjectsService} from "../../shared/services/projects.service";
 import {Project, ProjectGithub} from "../../shared/models/project";
 import {Title} from "@angular/platform-browser";
 import {GithubService} from "../../shared/services/github.service";
-import {Observable} from "rxjs";
+import {catchError, Observable} from "rxjs";
 
 @Component({
   selector: 'app-projet-detail',
@@ -15,6 +15,7 @@ export class ProjetDetailComponent implements OnInit {
 
   slug?: string;
   project?: Project;
+  notFound: boolean = false;
   readMe$: Observable<string> = new Observable<string>();
 
   constructor(
@@ -36,8 +37,23 @@ export class ProjetDetailComponent implements OnInit {
 
     this.titleService.setTitle(this.project?.title + " - Romain Antunes");
 
+    this.notFound = this.project?.github === undefined;
     if (this.project?.github) {
-      this.readMe$ = this.githubService.getReadMe(this.project?.github);
+
+      if (typeof this.project.github !== 'string' && this.project.github.noReadMe) {
+        this.notFound = true;
+        return;
+      }
+
+      this.readMe$ = this.githubService.getReadMe(this.project?.github)
+        .pipe(
+          catchError(
+            (err) => {
+              this.notFound = err.status === 404;
+              return new Observable<string>();
+            }
+          )
+        );
     }
   }
 

@@ -49,7 +49,12 @@
     </ng-container>
     <ng-template #isLoading>
       <div class="mt-4 text-center font-medium">
-        Loading readme file from GitHub...
+        <ng-container *ngIf="!notFound">
+          Loading readme file from GitHub...
+        </ng-container>
+        <ng-container *ngIf="notFound">
+          No readme file found on GitHub
+        </ng-container>
       </div>
     </ng-template>
   </div>

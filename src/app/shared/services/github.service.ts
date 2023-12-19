@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {map, Observable, of} from "rxjs";
 import {GithubUser} from "../models/githubUser";
 import {ProjectGithub} from "../models/project";
+import {Tags} from "../models/tags";
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,22 @@ export class GithubService {
       );
   }
 
+  getVersions(githubConfig: ProjectGithub | string): Observable<Tags[]> {
+    if (typeof githubConfig === 'string') {
+      return of([]);
+    }
+
+    const url = `https://api.github.com/repos/${githubConfig.org}/${githubConfig.name}/tags`;
+    return this.http.get<Tags[]>(url);
+  }
+
+  getLatestVersion(githubConfig: ProjectGithub | string): Observable<Tags> {
+    return this.getVersions(githubConfig)
+      .pipe(
+        map((res) => res[0])
+      );
+  }
+
   getReadMe(githubConfig: ProjectGithub | string): Observable<string> {
 
     const urlReadme = this.generateGitHubUrl(githubConfig, true);
@@ -48,13 +65,19 @@ export class GithubService {
   }
 
   private imageUrl(res: string, githubConfig: ProjectGithub | string): string {
-    const url = this.generateGitHubUrl(githubConfig);
-    const regex = new RegExp('src="(.*)"');
-    const match = regex.exec(res);
-    console.log(res, match)
+    const url = this.generateGitHubUrl(githubConfig, true);
+    const urlAssets = url.replace('README.md', '');
 
-    if (match) {
-      return res.replace(match[1], url + '/' + match[1]);
+    const regex = new RegExp('!\\[[^\\]]*]\\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\\)');
+    const match = regex.exec(res);
+
+    let groups = match?.groups;
+    for (const key in groups) {
+      if (groups[key]?.startsWith('http')) {
+        continue;
+      }
+
+      res = res.replace(groups[key], `${urlAssets}/${groups[key]}`);
     }
 
     return res;
@@ -68,6 +91,6 @@ export class GithubService {
     const org = github.org ?? 'RomainAntunes';
     const branch = github.branch ?? 'master';
 
-    return `https://raw.githubusercontent.com/${org}/${github.name}${readme ? `/${branch}/README.md` : ''}`;
+    return `https://${readme ? 'raw.githubusercontent' : 'github'}.com/${org}/${github.name}${readme ? `/${branch}/README.md` : ''}`;
   }
 }

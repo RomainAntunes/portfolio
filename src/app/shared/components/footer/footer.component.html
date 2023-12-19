@@ -14,8 +14,15 @@
       </div>
     </div>
   </ng-container>
+  <ng-container *ngIf="(version$ | async) as version">
+    <div class="flex flex-row items-center font-medium">
+      <a href="https://github.com/RomainAntunes/portfolio/tags" target="_blank">
+        {{version.name}}
+      </a>
+    </div>
+  </ng-container>
   <ng-container *ngIf="isMobile">
-    <div class="flex fle-row items-center opacity-30  ">
+    <div class="flex flex-row items-center opacity-30  ">
       <button (click)="resetPermission()">
         Reset permission
       </button>
