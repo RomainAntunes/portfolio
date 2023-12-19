@@ -1,9 +1,17 @@
-<h1 class="text-4xl text-black dark:text-gray-300">Hi 👋, I'm <span class="font-bold dark:text-white">Romain Antunes!</span></h1>
+<h1 class="text-4xl text-black dark:text-gray-300">Hi 👋, I'm <span
+  class="font-bold dark:text-white">Romain Antunes!</span></h1>
 
 <ul class="ml-5 mt-6 list-disc text-gray-500 dark:text-gray-200 gap-2 flex flex-col text-md">
   <li>Software developer, based in Lausanne 🇨🇭</li>
   <li>Building <a href="https://wiiseto.com" class="underline">Wiiseto</a> (team management for real estate projet)</li>
-  <li>Working for the <a class="underline">State of Vaud (DGNSI)</a></li>
+  <li>Currently working for the <a class="underline">
+    <ng-container *ngIf="(company$ | async) as company; else defaultJob">
+      {{company}}
+    </ng-container>
+    <ng-template #defaultJob>
+      State of Vaud (DGNSI)
+    </ng-template>
+  </a></li>
   <li>Love to travel, explore and learn new things</li>
 </ul>
 
@@ -23,7 +31,8 @@
                [alt]="'logo of my side project named ' + project.title">
         </ng-container>
         <ng-template #noImage>
-          <div class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 dark:text-gray-100 text-center leading-10 font-medium text-xl">
+          <div
+            class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 dark:text-gray-100 text-center leading-10 font-medium text-xl">
             {{ project.title[0] }}
           </div>
         </ng-template>

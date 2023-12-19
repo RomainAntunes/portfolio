@@ -15,7 +15,7 @@ export class GithubService {
   ) {
   }
 
-  getCompagny(): Observable<string> {
+  getCompany(): Observable<string> {
     return this.http.get<GithubUser>('https://api.github.com/users/RomainAntunes')
       .pipe(
         map((res) => res.company)
