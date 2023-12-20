@@ -19,7 +19,7 @@
             </button>
           </ng-container>
           <ng-template #noCallback>
-            <a target="_blank" [href]="item.route" class="flex items-center gap-2 group">
+            <a target="_blank" [href]="item.route" class="flex items-center gap-2 group" aria-label="social link">
               {{ item.name }}
               <ng-icon class="opacity-40 group-hover:opacity-100 duration-100 transition" *ngIf="item.icon"
                        [name]="item.icon"></ng-icon>

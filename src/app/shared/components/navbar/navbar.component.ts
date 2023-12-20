@@ -27,8 +27,8 @@ export class NavbarComponent {
       callback: () => this.messageService.add({
         id: 'resume',
         title: 'Resume',
-        content: 'You can chose what language you want to see my resume in. \n\n'
-          + '* The english version can contain some mistakes, I\'m not a native speaker.',
+        content: 'Choose your language',
+        smallContent: '* The english version can contain some mistakes, I\'m not a native english speaker',
         buttons: [
           {
             text: 'English',
