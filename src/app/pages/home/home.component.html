@@ -58,7 +58,8 @@
   <div class="mt-6 relative">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-10">
       <a *ngFor="let x of generateArray(4); let i = index"
-         [ngClass]="{'w-full h-full bg-gray-100 dark:bg-gray-950 p-0.5 rounded-lg': isMobile && enabledParalax}">
+         [ngClass]="{'w-full h-full bg-gray-100 dark:bg-gray-950 p-0.5 rounded-lg': isMobile && enabledParalax}"
+      class="lg:last:hidden">
         <div [style]="'transform: ' + transform"
              class="w-full h-full shadow dark:shadow-none bg-white border border-gray-200 rounded-lg p-4 dark:border-gray-700/70 dark:bg-gray-800/70 dark:hover:border-gray-700">
           <div class="flex justify-between">
@@ -71,6 +72,7 @@
           <div class="mt-4 flex flex-row gap-2 items-center">
             <h5 class="bg-gray-200 dark:bg-gray-400 animate-pulse h-5 w-14"></h5>
           </div>
+          <div class="mt-1 text-sm opacity-75 h-8 w-full bg-gray-200 dark:bg-gray-400 animate-pulse"></div>
         </div>
       </a>
     </div>
