@@ -4,7 +4,7 @@
     class="fixed bottom-10 right-0 mx-[5%] w-[90%] px-2 py-3 shadow justify-between flex border border-gray-200 rounded-lg p-4 bg-white dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-700"
     [style]="'transform: translateY('+(i*(-10))+'px) scale('+(1 - (0.04 * i))+');' +
      'opacity: '+(100 - (i*20))+'%;' +
-     'z-index: '+(listPermission.length - i)">
+     'z-index: '+(100 - i)">
     <ng-container *ngIf="i<4">
       <div class="dark:text-white text-neutral-950 text-md leading-8">
         <span>{{permission.text}}</span>
