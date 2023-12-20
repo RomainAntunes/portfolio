@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   totalProjects: number = 0;
 
   transform: string = '';
-  isMobile = this.permissionsService.isMobile;
-  enabledParalax = false;
 
   company$ = new Observable<string>();
 
@@ -34,8 +32,6 @@ export class HomeComponent implements OnInit {
     this.totalProjects = this.projectsService.getProjects().length;
     this.projects = this.projectsService.getProjects()
       .slice(0, 6);
-
-    this.enabledParalax = this.permissionsService.isGranted('deviceOrientation');
 
     this.company$ = this.githubService.getCompany();
   }
