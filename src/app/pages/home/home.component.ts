@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   totalProjects: number = 0;
 
   transform: string = '';
+  isMobile: boolean = this.permissionsService.isMobile;
 
   company$ = new Observable<string>();
 
