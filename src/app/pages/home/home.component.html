@@ -1,86 +1,144 @@
-<h1 class="text-4xl text-black dark:text-gray-300">Hi 👋, I'm <span
-  class="font-bold dark:text-white">Romain Antunes!</span></h1>
+<h1 class="text-4xl text-black dark:text-gray-300">
+  Hi 👋, I'm <span class="font-bold dark:text-white">Romain Antunes!</span>
+</h1>
 
-<ul class="ml-5 mt-6 list-disc text-gray-500 dark:text-gray-200 gap-2 flex flex-col text-md">
+<ul
+  class="ml-5 mt-6 list-disc text-gray-500 dark:text-gray-200 gap-2 flex flex-col text-md"
+>
   <li>Software developer, based in Lausanne 🇨🇭</li>
-  <li>Building <a href="https://wiiseto.com" class="underline">Wiiseto</a> (team management for real estate projet)</li>
-  <li>Currently working for the <a class="underline">
-    <ng-container *ngIf="(company$ | async) as company; else defaultJob">
-      {{company}}
+  <li>
+    Building <a href="https://wiiseto.com" class="underline">Wiiseto</a> (team
+    management for real estate projet)
+  </li>
+  <li>
+    Currently studying for my BSc in Computer Science
+    <ng-container *ngIf="company$ | async as company; else defaultJob">
+      and working at
+      <a class="underline">
+        {{ company }}
+      </a>
     </ng-container>
-    <ng-template #defaultJob>
-      State of Vaud (DGNSI)
-    </ng-template>
-  </a></li>
+    <ng-template #defaultJob></ng-template>
+  </li>
+  <!-- <li>
+    Currently working for the
+    <a class="underline">
+      <ng-container *ngIf="company$ | async as company; else defaultJob">
+        {{ company }}
+      </ng-container>
+      <ng-template #defaultJob></ng-template>
+    </a>
+  </li> -->
   <li>Love to travel, explore and learn new things</li>
 </ul>
 
-<hr class="my-8"/>
+<hr class="my-8" />
 
-<h3 class="text-2xl font-medium text-gray-950 dark:text-gray-200">Side-projects</h3>
+<h3 class="text-2xl font-medium text-gray-950 dark:text-gray-200">
+  Side-projects
+</h3>
 
 <div class="mt-6">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <a *ngFor="let project of projects"
-       [routerLink]="['/projects', project.slug]"
-       class="w-full h-full bg-gray-100 dark:bg-gray-950 rounded-lg">
-      <div [style]="'transform: ' + transform"
-           class="w-full h-full shadow bg-white border border-gray-200 rounded-lg p-4 dark:border-gray-700/70 dark:bg-gray-800/70 dark:hover:border-gray-700 dark:shadow-[0_0_8px_rgba(0,0,0,0.8)]">
+    <a
+      *ngFor="let project of projects"
+      [routerLink]="['/projects', project.slug]"
+      class="w-full h-full bg-gray-100 dark:bg-gray-950 rounded-lg"
+    >
+      <div
+        [style]="'transform: ' + transform"
+        class="w-full h-full shadow bg-white border border-gray-200 rounded-lg p-4 dark:border-gray-700/70 dark:bg-gray-800/70 dark:hover:border-gray-700 dark:shadow-[0_0_8px_rgba(0,0,0,0.8)]"
+      >
         <div class="flex justify-between">
-          <div [ngClass]="'shadow-[0_0_8px_' + (project.mainColor ?? '#e3e3e3') + ']'">
+          <div
+            [ngClass]="
+              'shadow-[0_0_8px_' + (project.mainColor ?? '#e3e3e3') + ']'
+            "
+          >
             <ng-container *ngIf="project.img; else noImage">
-              <img [width]="40" [height]="40" class="w-[40px] h-[40px] rounded-full" [ngSrc]="project.img"
-                   [alt]="'logo of my side project named ' + project.title">
+              <img
+                [width]="40"
+                [height]="40"
+                class="w-[40px] h-[40px] rounded-full"
+                [ngSrc]="project.img"
+                [alt]="'logo of my side project named ' + project.title"
+              />
             </ng-container>
             <ng-template #noImage>
               <div
-                class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 dark:text-gray-100 text-center leading-10 font-medium text-xl">
+                class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 dark:text-gray-100 text-center leading-10 font-medium text-xl"
+              >
                 {{ project.title[0] }}
               </div>
             </ng-template>
           </div>
-          <ng-icon class="opacity-50 text-lg" name="heroArrowTopRightOnSquare"></ng-icon>
+          <ng-icon
+            class="opacity-50 text-lg"
+            name="heroArrowTopRightOnSquare"
+          ></ng-icon>
         </div>
         <div class="mt-4 flex flex-row gap-2 items-center">
-          <h5 class="font-medium text-lg text-gray-950 dark:text-white">{{project.title}}</h5>
-          <div class="w-2 h-2 rounded-full"
-               [ngClass]="{'bg-green-400 shadow-sm shadow-green-400': (project.inProgress || project.inUse),
-           'bg-red-400 shadow-sm shadow-red-400': (!project.inProgress && !project.inUse)
-           }"
+          <h5 class="font-medium text-lg text-gray-950 dark:text-white">
+            {{ project.title }}
+          </h5>
+          <div
+            class="w-2 h-2 rounded-full"
+            [ngClass]="{
+              'bg-green-400 shadow-sm shadow-green-400':
+                project.inProgress || project.inUse,
+              'bg-red-400 shadow-sm shadow-red-400':
+                !project.inProgress && !project.inUse,
+            }"
           ></div>
         </div>
         <div class="mt-1 text-sm opacity-75 text-gray-600 dark:text-gray-50">
-          {{project.description}}
+          {{ project.description }}
         </div>
       </div>
     </a>
   </div>
   <div class="mt-6 relative">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-10">
-      <a *ngFor="let x of generateArray((isMobile ? 2 : 4)); let i = index"
-         class="lg:last:hidden w-full h-full bg-gray-100 dark:bg-gray-950 rounded-lg">
-        <div class="w-full h-full shadow dark:shadow-none bg-white border border-gray-200 rounded-lg p-4 dark:border-gray-700/70 dark:bg-gray-800/70 dark:hover:border-gray-700">
+      <a
+        *ngFor="let x of generateArray(isMobile ? 2 : 4); let i = index"
+        class="lg:last:hidden w-full h-full bg-gray-100 dark:bg-gray-950 rounded-lg"
+      >
+        <div
+          class="w-full h-full shadow dark:shadow-none bg-white border border-gray-200 rounded-lg p-4 dark:border-gray-700/70 dark:bg-gray-800/70 dark:hover:border-gray-700"
+        >
           <div class="flex justify-between">
             <div>
               <div
-                class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 leading-10 font-medium animate-pulse"></div>
+                class="w-[40px] h-[40px] rounded-full bg-gray-200 dark:bg-gray-400 leading-10 font-medium animate-pulse"
+              ></div>
             </div>
-            <ng-icon class="opacity-50" name="heroArrowTopRightOnSquare"></ng-icon>
+            <ng-icon
+              class="opacity-50"
+              name="heroArrowTopRightOnSquare"
+            ></ng-icon>
           </div>
           <div class="mt-4 flex flex-row gap-2 items-center">
-            <h5 class="bg-gray-200 dark:bg-gray-400 animate-pulse h-5 w-14"></h5>
+            <h5
+              class="bg-gray-200 dark:bg-gray-400 animate-pulse h-5 w-14"
+            ></h5>
           </div>
-          <div class="mt-1 text-sm opacity-75 h-8 w-full bg-gray-200 dark:bg-gray-400 animate-pulse"></div>
+          <div
+            class="mt-1 text-sm opacity-75 h-8 w-full bg-gray-200 dark:bg-gray-400 animate-pulse"
+          ></div>
         </div>
       </a>
     </div>
     <ng-container *ngIf="totalProjects > 6">
       <div
-        class="bg-gradient-to-b from-transparent via-gray-900/10 to-gray-900/50 dark:via-gray-900/90 dark:to-gray-900/90 h-full absolute top-0 left-0 w-full z-20 rounded">
-        <div class="flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <a [routerLink]="['/', 'projects']"
-             class="px-3 py-2 rounded font-medium shadow-sm bg-gray-100 hover:bg-gray-200 text-gray-950 dark:text-neutral-100
-             dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 border-2 border-neutral-750 dark:border-neutral-700">
+        class="bg-gradient-to-b from-transparent via-gray-900/10 to-gray-900/50 dark:via-gray-900/90 dark:to-gray-900/90 h-full absolute top-0 left-0 w-full z-20 rounded"
+      >
+        <div
+          class="flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <a
+            [routerLink]="['/', 'projects']"
+            class="px-3 py-2 rounded font-medium shadow-sm bg-gray-100 hover:bg-gray-200 text-gray-950 dark:text-neutral-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 border-2 border-neutral-750 dark:border-neutral-700"
+          >
             See more projects
           </a>
         </div>

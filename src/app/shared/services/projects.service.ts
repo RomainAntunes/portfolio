@@ -1,13 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Project} from "../models/project";
-import {Technology} from "../models/technology";
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Project } from '../models/project';
+import { Technology } from '../models/technology';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectsService {
-
   projects: Project[] = [
     {
       img: '',
@@ -15,34 +14,70 @@ export class ProjectsService {
       description: 'A web application to manage for real estate project',
       slug: 'wiiseto',
       github: 'https://github.com/wiiseto',
-      inUse: false,
+      website: 'https://wiiseto.com',
+      inUse: true,
       inProgress: true,
       mainColor: 'rgba(21,75,201, 0.6)',
       technologies: [
-        Technology.Angular,
+        Technology.NextJS,
         Technology.SpringBoot,
         Technology.AWS,
         Technology.PostgreSQL,
         Technology.Docker,
-        Technology.TailwindCSS
-      ]
+        Technology.TailwindCSS,
+      ],
+    },
+    {
+      img: '',
+      title: 'Grades Calculator',
+      description:
+        'A mini web application for student to calculate their grades with weights',
+      slug: 'grades-calculator',
+      github: '',
+      website: 'https://grades.romainantunes.dev',
+      inUse: true,
+      inProgress: true,
+      mainColor: 'rgba(21,75,201, 0.6)',
+      technologies: [
+        Technology.React,
+        Technology.NextJS,
+        Technology.PostgreSQL,
+        Technology.Docker,
+        Technology.TailwindCSS,
+      ],
+    },
+    {
+      img: '',
+      title: 'SparkChat',
+      description:
+        'A simplified chat application for LLM interactions and conversations without all the complexity of traditional chat apps. The goal is to provide a clean and focused interface for users to engage with language models effectively and to be fast and responsive.',
+      slug: 'sparkchat',
+      github: '',
+      website: '',
+      inUse: false,
+      inProgress: true,
+      mainColor: 'rgba(21,75,201, 0.6)',
+      technologies: [
+        Technology.React,
+        Technology.AWS,
+        Technology.PostgreSQL,
+        Technology.Docker,
+        Technology.TailwindCSS,
+      ],
     },
     {
       img: '',
       title: 'Pomodoro',
       description: 'My personal pomodoro timer, made with Angular',
       slug: 'pomodoro',
-      website: 'https://pomodoro.romainantunes.dev',
+      website: '',
       github: {
         url: 'https://github.com/romainantunes/pomodoro',
-        name: 'pomodoro'
+        name: 'pomodoro',
       },
       inUse: true,
       inProgress: true,
-      technologies: [
-        Technology.Angular,
-        Technology.TailwindCSS
-      ]
+      technologies: [Technology.Angular, Technology.TailwindCSS],
     },
     {
       img: 'assets/memoji.svg',
@@ -52,32 +87,26 @@ export class ProjectsService {
       website: 'https://romainantunes.dev',
       github: {
         url: 'https://github.com/romainantunes/portfolio',
-        name: 'portfolio'
+        name: 'portfolio',
       },
       inUse: true,
       inProgress: true,
-      technologies: [
-        Technology.Angular,
-        Technology.TailwindCSS
-      ]
+      technologies: [Technology.Angular, Technology.TailwindCSS],
     },
     {
       img: 'assets/memoji.svg',
       title: 'Old Portfolio',
       description: 'My old portfolio',
       slug: 'old-portfolio',
-      website: 'https://old.romainantunes.dev',
+      website: '',
       github: {
         url: 'https://github.com/RomainAntunes/portfolio/tree/v1.0.0',
         name: 'portfolio',
-        version: 'v1.0.0'
+        version: 'v1.0.0',
       },
       inUse: false,
       inProgress: false,
-      technologies: [
-        Technology.Angular,
-        Technology.TailwindCSS
-      ]
+      technologies: [Technology.Angular, Technology.TailwindCSS],
     },
     {
       img: '',
@@ -87,7 +116,7 @@ export class ProjectsService {
       github: {
         url: 'https://github.com/Homie-s-Project/mercure',
         name: 'mercure',
-        org: 'Homie-s-Project'
+        org: 'Homie-s-Project',
       },
       inUse: false,
       inProgress: false,
@@ -99,7 +128,7 @@ export class ProjectsService {
         Technology.Grafana,
         Technology.Redis,
         Technology.Stripe,
-      ]
+      ],
     },
     {
       img: '',
@@ -109,7 +138,7 @@ export class ProjectsService {
       github: {
         url: 'https://github.com/Homie-s-Project/kairos',
         name: 'kairos',
-        org: 'Homie-s-Project'
+        org: 'Homie-s-Project',
       },
       inUse: false,
       inProgress: false,
@@ -120,12 +149,13 @@ export class ProjectsService {
         Technology.PostgreSQL,
         Technology.Grafana,
         Technology.Redis,
-      ]
+      ],
     },
     {
       img: '',
       title: 'Twitter ISS',
-      description: 'Every 30 minutes, a tweet is posted with the current position of the ISS and a picture of the location with the forecast weather',
+      description:
+        'Every 30 minutes, a tweet is posted with the current position of the ISS and a picture of the location with the forecast weather',
       slug: 'twitter-iss-image',
       website: 'https://x.com/@whereisiss',
       inUse: false,
@@ -135,54 +165,46 @@ export class ProjectsService {
         Technology.Docker,
         Technology.Git,
         Technology.TwitterAPI,
-      ]
+      ],
     },
     {
       img: '',
       title: 'GeoGuessr Cheat',
-      description: 'An extension to cheat on GeoGuessr, just need to click on the map and the extension will find the right location for you',
+      description:
+        'An extension to cheat on GeoGuessr, just need to click on the map and the extension will find the right location for you',
       slug: 'geoguessr-cheat',
       github: {
         url: 'https://github.com/RomainAntunes/geoguessr-cheat',
         name: 'geoguessr-cheat',
-        noReadMe: true
+        noReadMe: true,
       },
       inUse: false,
       inProgress: false,
-      technologies: [
-        Technology.JavaScript,
-        Technology.Git,
-      ]
+      technologies: [Technology.JavaScript, Technology.Git],
     },
     {
       img: '',
       title: 'FiveM Bodycam',
-      description: 'A web application to create a bodycam overlay for FiveM streamers',
+      description:
+        'A web application to create a bodycam overlay for FiveM streamers',
       slug: 'fivem-bodycam',
       github: {
         url: 'https://github.com/RomainAntunes/fivem-bodycam-overlay',
-        name: 'fivem-bodycam-overlay'
+        name: 'fivem-bodycam-overlay',
       },
       inUse: false,
       inProgress: false,
-      technologies: [
-        Technology.Lua,
-        Technology.FiveM,
-        Technology.Git,
-      ]
+      technologies: [Technology.Lua, Technology.FiveM, Technology.Git],
     },
-  ]
+  ];
 
-  constructor(
-    private readonly http: HttpClient
-  ) {
-  }
+  constructor(private readonly http: HttpClient) {}
 
   getProjects() {
     return this.projects;
   }
 
   findProjectByName(title: string) {
-    return this.projects.find(project => project.slug === title);
+    return this.projects.find((project) => project.slug === title);
   }
 }
